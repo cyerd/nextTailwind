@@ -180,7 +180,7 @@ const userNavigation = [
                     <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
                         {navigation.map((item) => (
-                          <a
+                          <Link
                             key={item.href}
                             href={item.href}
                             className={classNames(
@@ -192,7 +192,7 @@ const userNavigation = [
                             aria-current={item.current ? "page" : undefined}
                           >
                             {item.name}
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     </div>
@@ -259,12 +259,12 @@ const userNavigation = [
                               </a>
                             </Link>
                             <Link href="/register">
-                              <a
+                              <Link
                                 href="/register"
                                 className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-teal-600 hover:bg-teal-700"
                               >
                                 Sign up
-                              </a>
+                              </Link>
                             </Link>
                           </div>
                         )
