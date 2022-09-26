@@ -76,7 +76,7 @@ function LoginPage() {
             <div>
               <img
                 className="mx-auto h-12 w-auto"
-                src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600"
+                src="https://tailwindui.com/img/logos/workflow-mark.svg?color=teal&shade=600"
                 alt="Workflow"
               />
               <h2 className="mt-6 text-center text-3xl tracking-tight font-bold text-gray-900">
@@ -87,7 +87,7 @@ function LoginPage() {
                 <Link href="/login">
                   <a
                     href="/login"
-                    className="font-medium text-indigo-600 hover:text-indigo-500"
+                    className="font-medium text-teal-600 hover:text-teal-500"
                   >
                     Sign In
                   </a>
@@ -111,7 +111,7 @@ function LoginPage() {
                     type="text"
                     autoComplete="name"
                     required
-                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-teal-500 focus:border-teal-500 focus:z-10 sm:text-sm"
                     placeholder="eg. John Doe"
                     value={name}
                     onChange={onChange}
@@ -127,7 +127,7 @@ function LoginPage() {
                     type="email"
                     autoComplete="email"
                     required
-                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-teal-500 focus:border-teal-500 focus:z-10 sm:text-sm"
                     placeholder="Email address"
                     value={email}
                     onChange={onChange}
@@ -143,7 +143,7 @@ function LoginPage() {
                     type="password"
                     autoComplete="current-password"
                     required
-                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-teal-500 focus:border-teal-500 focus:z-10 sm:text-sm"
                     placeholder="Password"
                     value={password}
                     onChange={onChange}
@@ -168,7 +168,7 @@ function LoginPage() {
                       name="avatar"
                       type="file"
                       autoComplete="current-avatar"
-                      className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                      className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-teal-500 focus:border-teal-500 focus:z-10 sm:text-sm"
                       placeholder="Avatar"
                       accept="images/*"
                       onChange={onChange}
@@ -180,7 +180,7 @@ function LoginPage() {
               <div>
                 <button
                   type="submit"
-                  className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
                 >
                   <span className="absolute left-0 inset-y-0 flex items-center pl-3"></span>
                   Sign Up

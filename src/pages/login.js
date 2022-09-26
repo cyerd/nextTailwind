@@ -41,7 +41,7 @@ function LoginPage() {
             <div>
               <img
                 className="mx-auto h-12 w-auto"
-                src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600"
+                src="/ishnaaz-Recovered.png"
                 alt="Workflow"
               />
               <h2 className="mt-6 text-center text-3xl tracking-tight font-bold text-gray-900">
@@ -50,19 +50,19 @@ function LoginPage() {
               <p className="mt-2 text-center text-sm text-gray-600">
                 Or{" "}
                 <Link href="/register">
-                <a
-                  href="/register"
-                  className="font-medium text-indigo-600 hover:text-indigo-500"
-                >
-                  Sign Up Now
-                </a>
+                  <a
+                    href="/register"
+                    className="font-medium text-teal-600 hover:text-teal-500"
+                  >
+                    Sign Up Now
+                  </a>
                 </Link>
               </p>
             </div>
-            <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+            <form className="mt-8 space-y-10 " onSubmit={handleSubmit}>
               <input type="hidden" name="remember" defaultValue="true" />
               <div className="rounded-md shadow-sm -space-y-px">
-                <div>
+                <div className="space-y-20">
                   <label htmlFor="email-address" className="sr-only">
                     Email address
                   </label>
@@ -72,12 +72,12 @@ function LoginPage() {
                     type="email"
                     autoComplete="email"
                     required
-                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-teal-500 focus:border-teal-500 focus:z-10 sm:text-sm"
                     placeholder="Email address"
                     ref={emailRef}
                   />
                 </div>
-                <div>
+                <div className="space-y-10">
                   <label htmlFor="password" className="sr-only">
                     Password
                   </label>
@@ -87,7 +87,7 @@ function LoginPage() {
                     type="password"
                     autoComplete="current-password"
                     required
-                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-teal-500 focus:border-teal-500 focus:z-10 sm:text-sm"
                     placeholder="Password"
                     ref={passwordRef}
                   />
@@ -100,7 +100,7 @@ function LoginPage() {
                     id="remember-me"
                     name="remember-me"
                     type="checkbox"
-                    className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                    className="h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300 rounded"
                   />
                   <label
                     htmlFor="remember-me"
@@ -113,7 +113,7 @@ function LoginPage() {
                 <div className="text-sm">
                   <a
                     href="#"
-                    className="font-medium text-indigo-600 hover:text-indigo-500"
+                    className="font-medium text-teal-600 hover:text-teal-500"
                   >
                     Forgot your password?
                   </a>
@@ -122,12 +122,11 @@ function LoginPage() {
 
               <div>
                 <button
-                disabled={loading ? true : false}
+                  disabled={loading ? true : false}
                   type="submit"
-                  className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
                 >
-                  <span className="absolute left-0 inset-y-0 flex items-center pl-3">
-                  </span>
+                  <span className="absolute left-0 inset-y-0 flex items-center pl-3"></span>
                   Sign in
                 </button>
               </div>
