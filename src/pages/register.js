@@ -86,7 +86,7 @@ function LoginPage() {
                 Already a Member ? {" "}
                 <Link href="/login">
                   <a
-                    href="/login"
+                    
                     className="font-medium text-teal-600 hover:text-teal-500"
                   >
                     Sign In

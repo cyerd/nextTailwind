@@ -51,7 +51,7 @@ function LoginPage() {
                 Or{" "}
                 <Link href="/register">
                   <a
-                    href="/register"
+                    
                     className="font-medium text-teal-600 hover:text-teal-500"
                   >
                     Sign Up Now
