@@ -63,6 +63,7 @@ function ProductPage() {
                 width="200px"
                 className="object-contain object-center rounded-t-lg mx-auto"
                 layout="responsive"
+                priority="true"
               />
               <div className="flex justify-between py-1 px-2  ">
                 <div className="max-h-12 truncate  text-clip">

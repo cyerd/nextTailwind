@@ -40,6 +40,7 @@ function Sidebar() {
               height="50"
               objectFit="contain"
               layout="fixed"
+              priority="true"
             />
             <div className="flex flex-col ml-3">
               <h5 className="font-bold text-xl">Ishnaaz Limited</h5>

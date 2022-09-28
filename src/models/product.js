@@ -1,17 +1,16 @@
 const mongoose = require("mongoose");
-
 const productSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, "Please enter product name"],
+    required: [true, "please enter product name"],
     trim: true,
-    maxLength: [100, "Product name must not exceed 100 characters"],
+    maxLength: [100, "product name cannot exceed 5 character"],
     default: 0.0,
   },
   price: {
     type: Number,
     required: [true, "please enter product price"],
-    maxLength: [5, "Price cannot exceed 5 digits"],
+    maxLength: [5, "product name cannot exceed 5 characters"],
     default: 0.0,
   },
   description: {
@@ -36,7 +35,7 @@ const productSchema = new mongoose.Schema({
   ],
   category: {
     type: String,
-    required: [true, "please enter product category"],
+    required: [true, "please select category for this product"],
     // enum: {
     //   values: [
     //     "Electronics",
@@ -80,10 +79,15 @@ const productSchema = new mongoose.Schema({
       },
     },
   ],
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    requred: true,
+    ref: "User",
+  },
   createdAt: {
     type: Date,
     default: Date.now(),
   },
 });
 
-module.exports = mongoose.models.Product || mongoose.model("Product", productSchema);
+module.exports = mongoose.models.product || mongoose.model("product", productSchema);

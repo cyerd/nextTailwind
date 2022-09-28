@@ -2,7 +2,6 @@ import React, { Fragment, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { login, clearErrors } from "../actions/userActions";
 import Loader from "../components/Loader";
-import { LockClosedIcon } from "@heroicons/react/solid";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
@@ -43,6 +42,7 @@ function LoginPage() {
                 className="mx-auto h-12 w-auto"
                 src="/ishnaaz-Recovered.png"
                 alt="Workflow"
+                priority="true"
               />
               <h2 className="mt-6 text-center text-3xl tracking-tight font-bold text-gray-900">
                 Sign in to your account
@@ -50,10 +50,7 @@ function LoginPage() {
               <p className="mt-2 text-center text-sm text-gray-600">
                 Or{" "}
                 <Link href="/register">
-                  <a
-                    
-                    className="font-medium text-teal-600 hover:text-teal-500"
-                  >
+                  <a className="font-medium text-teal-600 hover:text-teal-500">
                     Sign Up Now
                   </a>
                 </Link>

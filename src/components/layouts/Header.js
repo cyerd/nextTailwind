@@ -3,84 +3,40 @@ import { Fragment, useEffect } from "react";
 import { Popover, Menu, Transition, Disclosure } from "@headlessui/react";
 import Link from "next/link";
 
-import {
-  ArrowPathIcon,
-  Bars3Icon,
-  BookmarkSquareIcon,
-  CalendarIcon,
-  ChartBarIcon,
-  CursorArrowRaysIcon,
-  LifebuoyIcon,
-  PhoneIcon,
-  PlayIcon,
-  ShieldCheckIcon,
-  Squares2X2Icon,
-  XMarkIcon,
-  BellIcon,
-} from "@heroicons/react/24/outline";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { Bars3Icon, XMarkIcon, BellIcon } from "@heroicons/react/24/outline";
+
 import { useDispatch, useSelector } from "react-redux";
 import store from "../../../store";
 import { loadUser, logout } from "../../actions/userActions";
-import { Router } from "next/router";
 
 import { useRouter } from "next/router";
 
-import Loader from "../Loader";
 import Image from "next/image";
 
 const navigation = [
-  { name: "Dashboard", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
-  { name: "Reports", href: "#", current: false },
-];
-
-const recentPosts = [
-  { id: 1, name: "Boost your conversion rate", href: "#" },
-  {
-    id: 2,
-    name: "How to use search engine optimization to drive traffic to your site",
-    href: "#",
-  },
-  { id: 3, name: "Improve your customer experience", href: "#" },
+  { name: "Dashboard", href: "/dashboard", current: true },
+  { name: "Team", href: "/team", current: false },
+  { name: "Projects", href: "/projects", current: false },
+  { name: "Calendar", href: "/calendar", current: false },
+  { name: "Reports", href: "/reports", current: false },
 ];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-// export const getServerSideProps = withSession(async function ({ req, res }) {
-//   const { user } = req.session;
-
-//   if (!user) {
-//     return {
-//       redirect: {
-//         destination: "/login",
-//         permanent: false,
-//       },
-//     };
-//   }
-
-//   return {
-//     props: { user },
-//   };
-// });
-
 export default function Header() {
+  const dispatch = useDispatch();
+  const { user, isAuthenticated, loading } = useSelector((state) => state.auth);
+  const router = useRouter();
+
   useEffect(() => {
     store.dispatch(loadUser());
   }, []);
 
-  const dispatch = useDispatch();
-
-  const { user, isAuthenticated, loading } = useSelector((state) => state.auth);
-
-  const router = useRouter();
-
   const HandleLogout = () => {
     dispatch(logout());
+ 
     router.push("/login");
   };
 
@@ -107,6 +63,7 @@ export default function Header() {
                         width="50"
                         height="50"
                         layout="fixed"
+                        priority="true"
                       />
                     </div>
                     <div className="hidden md:block">
@@ -161,13 +118,11 @@ export default function Header() {
                           >
                             <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                               {userNavigation.map((item) => (
-                                <Menu.Item key={item.name}>
+                                <Menu.Item key={item.href}>
                                   {({ active }) => (
-                                    <Link
-                                      onClick={item.action}
-                                      href={item.href}
-                                    >
+                                    <Link href={item.href}>
                                       <a
+                                        onClick={item.action}
                                         className={classNames(
                                           active ? "bg-teal-100" : "",
                                           "block px-4 py-2 text-sm text-teal-900"
@@ -224,7 +179,7 @@ export default function Header() {
                 <div className="space-y-1 px-2 pt-2 pb-3 sm:px-3">
                   {navigation.map((item) => (
                     <Disclosure.Button
-                      key={item.name}
+                      key={item.href}
                       as="a"
                       href={item.href}
                       className={classNames(
@@ -268,7 +223,7 @@ export default function Header() {
                     <div className="mt-3 space-y-1 px-2">
                       {userNavigation.map((item) => (
                         <Disclosure.Button
-                          key={item.name}
+                          key={item.href}
                           as="a"
                           href={item.href}
                           className="block rounded-md px-3 py-2 text-base font-medium text-teal-400 hover:bg-teal-700 hover:text-white"
