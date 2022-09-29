@@ -4,6 +4,7 @@ import { login, clearErrors } from "../actions/userActions";
 import Loader from "../components/Loader";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { Dna } from "react-loader-spinner";
 
 function LoginPage() {
   const emailRef = useRef();
@@ -33,7 +34,16 @@ function LoginPage() {
   return (
     <Fragment>
       {loading ? (
-        <Loader />
+        <div className="flex w-full justify-center">
+          <Dna
+            visible={true}
+            height="180"
+            width="180"
+            ariaLabel="dna-loading"
+            wrapperStyle={{}}
+            wrapperClass="dna-wrapper"
+          />
+        </div>
       ) : (
         <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
           <div className="max-w-md w-full space-y-8">
@@ -42,7 +52,6 @@ function LoginPage() {
                 className="mx-auto h-12 w-auto"
                 src="/ishnaaz-Recovered.png"
                 alt="Workflow"
-
               />
               <h2 className="mt-6 text-center text-3xl tracking-tight font-bold text-gray-900">
                 Sign in to your account

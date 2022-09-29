@@ -36,7 +36,7 @@ export default function Header() {
 
   const HandleLogout = () => {
     dispatch(logout());
- 
+
     router.push("/login");
   };
 
@@ -56,15 +56,17 @@ export default function Header() {
                 <div className="flex h-16 items-center justify-between">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
-                      <Image
-                        className="h-8 w-8 bg-teal-50 rounded-xl object-contain "
-                        src="/ishnaaz-Recovered.png"
-                        alt="Your Company"
-                        width="50"
-                        height="50"
-                        layout="fixed"
-                        priority="true"
-                      />
+                      <Link Link href="/">
+                        <Image
+                          className="h-8 w-8 bg-teal-50 rounded-xl object-contain "
+                          src="/ishnaaz-Recovered.png"
+                          alt="Your Company"
+                          width="50"
+                          height="50"
+                          layout="fixed"
+                          priority="true"
+                        />
+                      </Link>
                     </div>
                     <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
