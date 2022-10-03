@@ -44,7 +44,7 @@ function ProductPage() {
 
   return (
     <div className="h-full ml-2 ">
-      <div className="mt-2  grid grid-cols-2 gap-y-10 gap-x-2 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7  xl:gap-x-4">
+      <div className="mt-2  grid grid-cols-2 gap-y-10 gap-x-2 sm:grid-cols-3 lg:grid-cols-6 xl:grid-cols-7 2xl:grid-cols-9  xl:gap-x-4">
         {products.map((product) => (
           <div
             key={product._id}

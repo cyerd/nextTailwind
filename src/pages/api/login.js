@@ -2,7 +2,7 @@ import dbConnect from "../../dbConnect";
 import User from "../../models/user";
 import { sign } from "jsonwebtoken";
 
-import  cookie from "cookie";
+import cookie from "cookie";
 
 export default async function handler(req, res, next) {
   const { method } = req;
@@ -22,6 +22,7 @@ export default async function handler(req, res, next) {
       const tokenData = {
         id: user._id,
         name: user.name,
+        avatar: user.avatar.url,
         expires: new Date(
           Date.now() + process.env.COOKIE_EXPIRES_TIME * 24 * 60 * 60 * 1000
         ),
@@ -29,7 +30,6 @@ export default async function handler(req, res, next) {
       const ispasswordMatched = await user.comparePassword(password);
 
       const jwt = sign(tokenData, process.env.SECRET_KEY);
-  
 
       if (!user) {
         return res.status(401).json({
@@ -45,7 +45,9 @@ export default async function handler(req, res, next) {
         "Set-Cookie",
         cookie.serialize("token", jwt, {
           httpOnly: true,
+          secure: true,
           sameSite: "strict",
+          sameParty: true,
           maxAge: 3600,
           path: "/",
         })
