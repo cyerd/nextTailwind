@@ -14,7 +14,6 @@ function me() {
             alt="avatar"
             className="rounded-full"
             style={{ width: "150px" }}
-            fluid
           />
           <p className="font-bold mb-1">HUDHEYFA CYERD</p>
           <p className="text-muted mb-1">Full Stack Developer</p>
@@ -31,22 +30,22 @@ function me() {
         <div className="mx-5 border p-4 rounded-lg bg-gray-50 w-full">
           <div className="flex mx-5 px-5 w-full">
             <form className="flex flex-col items-start justify-between">
-            <div action="">
-              <label htmlFor="">Full Name</label>
-              <input
-                type="text"
-                className="border-0 bg-transparent text-center "
-                placeholder="John Smith"
-              />
+              <div action="">
+                <label htmlFor="">Full Name</label>
+                <input
+                  type="text"
+                  className="border-0 bg-transparent text-center "
+                  placeholder="John Smith"
+                />
               </div>
               <div>
-              <label htmlFor="">Email</label>
-              <input
-                type="text"
-                className="border-0 bg-transparent text-center "
-                placeholder="JohnSmith@gmail.com"
-              />
-            </div>
+                <label htmlFor="">Email</label>
+                <input
+                  type="text"
+                  className="border-0 bg-transparent text-center "
+                  placeholder="JohnSmith@gmail.com"
+                />
+              </div>
             </form>
           </div>
         </div>
