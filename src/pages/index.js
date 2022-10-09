@@ -6,6 +6,7 @@ import store from "../../store";
 import Sidebar from "../components/layouts/Sidebar"
 import ProductPage from "../components/ProductPage"
 import Head from "next/head";
+import Page from "../components/new";
 
 
 
@@ -27,7 +28,7 @@ export default function Home() {
       </Head>
       <Header />
       <div className="flex">
-        {/* <Sidebar /> */}
+        <Sidebar/>
         <ProductPage />
       </div>
     </div>
