@@ -5,13 +5,8 @@ import store from "../../store";
 import { loadUser } from "../actions/userActions";
 import Header from "../components/layouts/Header";
 
-function me() {
-  const dispatch = useDispatch();
+function Profile() {
   const { user, isAuthenticated, loading } = useSelector((state) => state.auth);
-
-  useEffect(() => {
-    store.dispatch(loadUser());
-  }, []);
 
   return (
     <>
@@ -69,4 +64,4 @@ function me() {
   );
 }
 
-export default me;
+export default Profile;
